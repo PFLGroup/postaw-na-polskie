@@ -1,0 +1,146 @@
+/* v2-C „Tu się robi” · map-first · Bricolage Grotesque / Atkinson Hyperlegible Next */
+:root{
+  --bg:#FCFBF7; --pow:#F0EEE7; --karta:#FFFFFF; --tusz:#1F2421; --tusz2:#59605B; --linia:#DEDDD5; --kropka:#C9CDC3;
+  --czerw:#D0301F; --na-czerw:#FFFFFF; --halo:rgb(208 48 31 / .14);
+  --f-d:"Bricolage Grotesque",system-ui,sans-serif; --f-t:"Atkinson Hyperlegible Next",system-ui,sans-serif;
+  --gut:clamp(16px,3vw,44px); --max:1360px; --r:16px; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141816; --pow:#1B201D; --karta:#1F2522; --tusz:#ECEEE9; --tusz2:#A2AAA4; --linia:#2F3732; --kropka:#334039; --czerw:#FF6A5C; --na-czerw:#141816; --halo:rgb(255 106 92 / .18); color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141816; --pow:#1B201D; --karta:#1F2522; --tusz:#ECEEE9; --tusz2:#A2AAA4; --linia:#2F3732; --kropka:#334039; --czerw:#FF6A5C; --na-czerw:#141816; --halo:rgb(255 106 92 / .18); color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--tusz);font:400 1.0625rem/1.6 var(--f-t);overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:4px}
+h1,h2,h3{margin:0;font-family:var(--f-d);font-weight:700;line-height:1;letter-spacing:-.03em;text-wrap:balance;font-variation-settings:"opsz" 96}
+p{margin:0;text-wrap:pretty}
+figure{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--tusz);color:var(--bg);padding:8px 12px;z-index:50}.skip:focus{left:8px}
+:focus-visible{outline:2.5px solid var(--czerw);outline-offset:3px}
+.drobny{font-size:.86rem;color:var(--tusz2)}
+.zrodlo{font-size:.8rem;line-height:1.5;color:var(--tusz2)}
+.lead{font-size:clamp(1.08rem,1.3vw,1.24rem);color:var(--tusz2);max-width:46ch}
+.h2{font-size:clamp(2.1rem,4.6vw,4.3rem)}
+.h3{font-size:1.7rem}
+
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(6px)}
+.top__in{display:flex;align-items:center;gap:24px;height:64px}
+.logo{display:inline-flex;align-items:center;gap:10px;font:700 1.12rem/1 var(--f-d);letter-spacing:-.02em;text-decoration:none;margin:0}
+.logo__pin{width:12px;height:12px;border-radius:50%;background:var(--czerw);box-shadow:0 0 0 4px var(--halo)}
+.top__nav{margin-left:auto;display:flex;gap:6px}
+.top__nav a{text-decoration:none;font-size:.92rem;padding:8px 14px;border-radius:99px}
+.top__nav a:hover{background:var(--pow)}
+.motyw{width:38px;height:38px;border-radius:50%;border:1px solid var(--linia);background:var(--karta);cursor:pointer;display:grid;place-items:center}
+.motyw span{width:14px;height:14px;border-radius:50%;box-shadow:inset -5px -2px 0 0 var(--tusz)}
+
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--czerw);color:var(--na-czerw);font:700 1rem/1 var(--f-t);padding:17px 24px;text-decoration:none;border-radius:99px}
+.cta::after{content:"→";transition:transform .2s}
+.cta:hover::after{transform:translateX(4px)}
+.link{font-weight:700}
+
+/* hero */
+.hero{padding:clamp(28px,4vw,56px) 0 clamp(40px,5vw,72px)}
+.hero__siatka{display:grid;grid-template-columns:4.2fr 7.8fr;gap:var(--gut);align-items:center}
+.hero__h1{font-size:clamp(3.1rem,5.6vw,6rem);font-weight:750;line-height:.94;letter-spacing:-.035em;font-variation-settings:"opsz" 96,"wdth" 92}
+.hero__h1 span{display:block;font-weight:400;color:var(--tusz2);font-size:.64em;line-height:1;margin-top:.16em;letter-spacing:-.03em;font-variation-settings:"opsz" 96,"wdth" 100}
+.hero__lead{margin-top:28px;max-width:44ch;font-size:1.12rem}
+.hero__akcje{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;margin:30px 0 16px}
+
+/* mapa (signature) */
+.mapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,300px);gap:clamp(16px,2vw,28px);align-items:center}
+.mapa__pod{grid-column:1/-1}
+.mapa__svg{width:100%;height:auto;display:block;overflow:visible}
+.mapa__kropki{fill:var(--kropka)}
+.pin{cursor:pointer;outline:none}
+.pin__halo{fill:var(--halo);transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .25s ease}
+.pin__k{fill:var(--bg);stroke:var(--czerw);stroke-width:3;transition:fill .2s}
+.pin text{font:700 19px var(--f-d);fill:var(--tusz);paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
+.pin:hover .pin__k,.pin:focus-visible .pin__k,.pin.on .pin__k{fill:var(--czerw)}
+.pin.on .pin__halo,.pin:focus-visible .pin__halo{transform:scale(1)}
+.karta{background:var(--karta);border-radius:var(--r);padding:20px 22px;box-shadow:0 1px 0 var(--linia),0 30px 50px -30px rgb(0 0 0 / .35);border:1px solid var(--linia);transition:opacity .2s,transform .2s}
+.karta.zmiana{opacity:0;transform:translateY(6px)}
+.karta__miasto{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;color:var(--tusz2)}
+.karta__miasto::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--czerw)}
+.karta__nazwa{font-size:2rem;margin:8px 0 2px}
+.karta__marki{font-size:.88rem;color:var(--tusz2)}
+.karta__m{margin:14px 0;border-top:1px solid var(--linia)}
+.karta__m div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--linia);font-size:.9rem}
+.karta__m dt{color:var(--tusz2)}.karta__m dd{margin:0;font-weight:700}
+.karta__fakt{font-size:.95rem;margin-bottom:8px}
+.mapa__pod{font-size:.84rem;color:var(--tusz2);margin-top:6px}
+
+/* pasmo zdjęć */
+.pasmo{padding:clamp(40px,5vw,72px) 0 clamp(56px,6vw,96px);background:var(--pow)}
+.pasmo__t{font-size:clamp(1.6rem,2.6vw,2.4rem);margin-bottom:24px}
+.pasmo__lista{list-style:none;margin:0;padding:0 max(var(--gut),calc((100vw - var(--max)) / 2 + var(--gut))) 8px;scroll-padding-inline:max(var(--gut),calc((100vw - var(--max)) / 2 + var(--gut)));display:grid;grid-auto-flow:column;grid-auto-columns:clamp(240px,24vw,340px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.pasmo__lista li{scroll-snap-align:start}
+.pasmo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
+.pasmo li:nth-child(3) img{object-position:68% 72%}
+.pasmo li:nth-child(even) img{aspect-ratio:1/1;margin-top:clamp(20px,4vw,56px)}
+.pasmo figcaption{font-size:.86rem;margin-top:10px;display:grid}
+.pasmo figcaption b{font:700 1.1rem/1.2 var(--f-d)}
+.pasmo figcaption span{font-size:.74rem;color:var(--tusz2)}
+
+/* sekcje */
+.sekcja{padding:clamp(64px,8vw,120px) 0}
+.ile__siatka{display:grid;grid-template-columns:5fr 7fr;gap:var(--gut);align-items:start}
+.ile__siatka .lead{margin-top:18px}
+.kalk{background:var(--karta);border:1px solid var(--linia);border-radius:calc(var(--r) * 1.5);padding:clamp(22px,3vw,40px)}
+.pole{display:grid;gap:8px;margin-bottom:22px}
+.pole label{font-weight:700}
+.pole__para{display:flex;align-items:center;gap:16px}
+.pole__l{font:700 1.35rem/1 var(--f-d);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pole__l input{font:inherit;color:var(--tusz);background:var(--pow);border:0;border-radius:10px;width:3.6em;text-align:right;padding:6px 8px;appearance:textfield;-moz-appearance:textfield}
+.pole__l input::-webkit-inner-spin-button{-webkit-appearance:none}
+.pomoc{font-size:.84rem;color:var(--tusz2)}
+input[type=range]{flex:1;min-width:0;accent-color:var(--czerw)}
+.wynik{border-top:1px dashed var(--linia);padding-top:22px;margin-top:6px}
+.wynik__liczba{font:750 clamp(3.2rem,7vw,6rem)/1 var(--f-d);letter-spacing:-.035em;margin:10px 0 14px;font-variation-settings:"opsz" 96,"wdth" 90;white-space:nowrap}
+.wynik__liczba small{font:400 1.1rem var(--f-t);letter-spacing:0;color:var(--tusz2)}
+
+/* dowody */
+.dowody{border-top:1px solid var(--linia)}
+.dowody__zdanie{font:500 clamp(1.4rem,2.6vw,2.35rem)/1.38 var(--f-d);letter-spacing:-.015em;max-width:34ch;margin-top:clamp(28px,4vw,48px);font-variation-settings:"opsz" 40}
+.dowody__zdanie mark{background:var(--pow);color:var(--tusz);font-weight:800;padding:0 .18em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.dowody__zdanie sup{font:700 .45em var(--f-t);color:var(--tusz2)}
+.dowody__zrodla{margin:32px 0 0;padding-left:1.2em;font-size:.82rem;color:var(--tusz2);max-width:80ch;display:grid;gap:4px}
+
+/* półka */
+.polka{background:var(--pow)}
+.polka__glowa{display:grid;grid-template-columns:1fr 1fr;gap:var(--gut);align-items:end;margin-bottom:36px}
+.polka__lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wiersz{width:100%;display:grid;grid-template-columns:2.4fr 2.6fr 1.6fr 4fr;gap:var(--gut);align-items:center;text-align:left;background:var(--karta);border:1px solid var(--linia);border-radius:var(--r);padding:18px 22px;font:inherit;color:inherit;cursor:pointer;transition:border-color .2s}
+.wiersz:hover{border-color:var(--tusz)}
+.wiersz__nazwa{font:700 1.6rem/1 var(--f-d);letter-spacing:-.02em}
+.wiersz__marki{font-size:.9rem;color:var(--tusz2)}
+.wiersz__miasto{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem}
+.wiersz__miasto i{width:8px;height:8px;border-radius:50%;background:var(--czerw)}
+.wiersz__fakt{font-size:.95rem}
+.polka__nota{margin-top:18px}
+
+/* adres + deklaracja */
+.adres__siatka{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.adres .lead{margin-top:22px;color:var(--tusz)}
+.deklaracja{background:var(--karta);border:1px solid var(--linia);border-radius:calc(var(--r) * 1.5);padding:clamp(22px,3vw,40px);display:grid;gap:12px;justify-items:start}
+.zob{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:14px 0;border-top:1px solid var(--linia);width:100%;cursor:pointer}
+.zob input{width:22px;height:22px;accent-color:var(--czerw);margin:2px 0 0}
+.deklaracja .cta{margin-top:10px}
+
+.stopka{border-top:1px solid var(--linia);padding:30px 0 38px}
+.stopka__in{display:grid;grid-template-columns:1fr 1.6fr 1.4fr;gap:16px;align-items:center}
+.stopka__pfl{font-size:.86rem;text-align:right}
+
+@media (max-width:960px){
+  .top__nav{display:none}.motyw{margin-left:auto}
+  .hero__siatka,.ile__siatka,.adres__siatka,.polka__glowa{grid-template-columns:1fr}
+  .mapa{margin-top:28px}
+  .mapa{grid-template-columns:1fr}
+  .pin text{font-size:24px}
+  .wiersz{grid-template-columns:1fr auto;gap:6px 12px}
+  .wiersz__nazwa{grid-column:1}.wiersz__miasto{grid-column:2;grid-row:1}
+  .wiersz__marki,.wiersz__fakt{grid-column:1/-1}
+  .stopka__in{grid-template-columns:1fr}.stopka__pfl{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}

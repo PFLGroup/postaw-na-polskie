@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Postaw na Polskie · prototyp v2-A „Metryczka”</title>
+<meta name="description" content="Prototyp v2-A. Policz, ile z Twoich zakupów może zostać w Polsce, i znajdź firmy z Polski.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBFAF8">
+<link rel="preload" href="assets/fonts/funnel-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem('pnp-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="logo" href="#" aria-label="Postaw na Polskie, strona główna"><span class="logo__znak" aria-hidden="true"></span>Postaw na Polskie</a>
+    <nav class="top__nav" aria-label="Główna">
+      <a href="#ile">Ile zostaje</a>
+      <a href="#dowody">Dowody</a>
+      <a href="#polka">Polskie marki</a>
+      <a href="#deklaracja">Deklaracja</a>
+    </nav>
+    <button class="motyw" type="button" data-motyw aria-label="Przełącz jasny lub ciemny motyw"><span aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<main id="tresc">
+
+<!-- HERO: scena jednego obiektu. Zdjęcie półki + metryczka jak zawieszka premium marki -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero__siatka">
+    <div class="hero__tekst">
+      <h1 id="h1" class="hero__h1">Postaw na Polskie. <span>Niech zostanie tutaj.</span></h1>
+      <p class="hero__lead">Każdy paragon to decyzja o tym, gdzie trafią Twoje pieniądze. Kiedy kupujesz od firmy z Polski, zostaje tu więcej: pensje, podatki, zysk, który wraca do inwestycji. Nie trzeba przepłacać. Wystarczy sprawdzić.</p>
+      <div class="hero__akcje">
+        <a class="cta" href="#ile">Sprawdź, ile zostaje</a>
+        <a class="link" href="#deklaracja">Albo od razu podpisz deklarację</a>
+      </div>
+      <p class="drobny">Kampania społeczna. Bez polityki, bez bojkotów.</p>
+    </div>
+
+    <figure class="hero__scena">
+      <img src="assets/img/chleb.webp" width="1600" height="1067" alt="Półki z pieczywem w piekarni w Świebodzinie: bochenki, bułki i chleby na drewnianych regałach i w wiklinowych koszach." fetchpriority="high">
+      <figcaption class="fot">Piekarnia w Świebodzinie. Fot. GeoMancer448, CC BY 4.0, Wikimedia Commons</figcaption>
+      <div class="metryczka hero__metryczka" role="group" aria-label="Metryczka produktu z Polski">
+        <p class="metryczka__nag"><span>Metryczka</span><span>nr 001</span></p>
+        <dl>
+          <div><dt>Siedziba</dt><dd>w Polsce</dd></div>
+          <div><dt>Produkcja</dt><dd>w Polsce</dd></div>
+          <div><dt>Kapitał</dt><dd>polski</dd></div>
+          <div><dt>Podatki</dt><dd>płacone tutaj</dd></div>
+          <div class="metryczka__ty"><dt>Kupujący</dt><dd><label class="sr-only" for="imie">Wpisz swoje imię</label><input id="imie" type="text" maxlength="22" placeholder="Twoje imię" autocomplete="given-name" spellcheck="false"></dd></div>
+        </dl>
+        <p class="metryczka__stopka"><span class="pl" aria-hidden="true">PL</span><span>Sprawdzone według jawnych kryteriów</span></p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- KALKULATOR + SIGNATURE: kod złotówki -->
+<section class="sekcja ile" id="ile" aria-labelledby="h-ile">
+  <div class="wrap">
+    <div class="sekcja__glowa">
+      <h2 id="h-ile" class="h2">Każdy paragon ma adres.</h2>
+      <p class="lead">Wpisz, ile wydajesz miesięcznie na zakupy. Pokażemy, w którą stronę mogą płynąć te pieniądze.</p>
+    </div>
+
+    <div class="ile__siatka">
+      <form class="kalk" id="kalk" novalidate>
+        <div class="pole">
+          <label for="kwota">Miesięcznie na zakupy wydaję</label>
+          <div class="pole__para">
+            <input type="range" id="kwota-s" min="200" max="10000" step="50" value="2000" aria-label="Kwota miesięczna, suwak">
+            <span class="pole__liczba"><input type="number" id="kwota" min="0" max="100000" step="10" value="2000" inputmode="numeric"> zł</span>
+          </div>
+          <span class="pomoc">Przykładowo 2000 zł. To nie średnia krajowa, tylko punkt wyjścia.</span>
+        </div>
+        <div class="pole">
+          <label for="udzial">Od firm z Polski kupuję mniej więcej</label>
+          <div class="pole__para">
+            <input type="range" id="udzial" min="0" max="100" step="5" value="50">
+            <output id="udzial-o" for="udzial" class="pole__liczba">50%</output>
+          </div>
+          <span class="pomoc">To Twój szacunek. Nikt go nie sprawdza.</span>
+        </div>
+
+        <table class="tabela-wartosci" aria-live="polite">
+          <caption>Wartość Twojego paragonu, gdybyś przesunął(-ęła) <b data-w="pp">10</b> pkt proc. zakupów na polskie</caption>
+          <tbody>
+            <tr><th scope="row">Teraz do firm z Polski</th><td><span data-w="teraz">1000 zł</span> / mies.</td></tr>
+            <tr><th scope="row">Po zmianie</th><td><span data-w="po">1200 zł</span> / mies.</td></tr>
+            <tr><th scope="row">Dodatkowo do firm z Polski</th><td><span data-w="y">2400 zł</span> / rok</td></tr>
+            <tr class="mocny"><th scope="row">Z tego zostaje w Polsce</th><td>ok. <span data-w="z">1296 zł</span> / rok</td></tr>
+          </tbody>
+        </table>
+        <p class="zrodlo">Liczymy różnicę 79 gr i 25 gr z każdej przesuniętej złotówki. Grant Thornton, „Miliardy zostające w Polsce”, 2019 (dane z 2018 r., najnowsze dostępne). <a href="https://grantthornton.pl/publikacja/dokad-trafiaja-pieniadze-ktore-wydajemy-w-sklepach/" rel="noopener" target="_blank">grantthornton.pl</a></p>
+      </form>
+
+      <div class="kod" aria-labelledby="kod-t">
+        <h3 id="kod-t" class="kod__t">Kod jednej złotówki</h3>
+        <p class="kod__opis">Sto kresek, sto groszy. Ciemne zostają w Polsce.</p>
+        <div class="kod__przelacz" role="radiogroup" aria-label="Kto wyprodukował produkt">
+          <button type="button" role="radio" aria-checked="true" data-kod="79">Firma z Polski, produkt z Polski</button>
+          <button type="button" role="radio" aria-checked="false" data-kod="25">Firma zagraniczna, produkt z importu</button>
+        </div>
+        <div class="kod__kreski" id="kreski" aria-hidden="true"></div>
+        <p class="kod__wynik"><span class="kod__liczba" id="kod-liczba">79</span><span class="kod__jedn">gr<br>zostaje w kraju</span></p>
+        <p class="zrodlo">Symulacja Grant Thornton, 2019. Produkty firm zagranicznych wytwarzane w Polsce leżą pomiędzy.</p>
+      </div>
+    </div>
+
+    <div class="skala">
+      <p>Gdyby 1% wydatków wszystkich Polaków przesunąć z produktów zagranicznych na polskie:</p>
+      <p class="skala__liczba">+6,6 mld zł <span>rocznie</span></p>
+      <p class="zrodlo">Grant Thornton, 2019 (baza: konsumpcja 2018 r., 1216,3 mld zł).</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOWODY -->
+<section class="sekcja dowody" id="dowody" aria-labelledby="h-dowody">
+  <div class="wrap">
+    <div class="sekcja__glowa">
+      <h2 id="h-dowody" class="h2">Polskie nie z sentymentu. Z rachunku.</h2>
+      <p class="lead">Patriotyzm gospodarczy to nie emocja. To prosta mechanika: pieniądz wydany tutaj pracuje tutaj dłużej.</p>
+    </div>
+    <ol class="dowody__lista">
+      <li>
+        <h3>Pensje</h3>
+        <p class="dowody__liczba">46,6%</p>
+        <p class="dowody__co">PKB wytwarzają małe i średnie firmy. Pracuje w nich 6,9 mln osób, które wydają pensje w Twojej okolicy.</p>
+        <p class="zrodlo">PARP, Raport o stanie sektora MŚP 2025 (PKB: dane 2022, pracujący: 2023).</p>
+      </li>
+      <li>
+        <h3>Podatki</h3>
+        <p class="dowody__liczba">86,6 mld zł</p>
+        <p class="dowody__co">wpływów z CIT w 2024 r. Firma z siedzibą w Polsce rozlicza tu podatek dochodowy. Z niego są szkoły, drogi, szpitale.</p>
+        <p class="zrodlo">Ministerstwo Finansów, odpowiedź na interpelację nr 15986, 2.04.2026.</p>
+      </li>
+      <li>
+        <h3>Zysk, który zostaje</h3>
+        <p class="dowody__liczba">63,6 mld zł</p>
+        <p class="dowody__co">dywidend wypłacili inwestorzy zagraniczni w 2024 r. (w 2020 r.: 34,7 mld zł). Uczciwie: 56,4 mld zł reinwestowali w Polsce.</p>
+        <p class="zrodlo">NBP, Dochody zagranicznych inwestorów bezpośrednich w Polsce w 2024 r., tab. 3.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- PÓŁKA -->
+<section class="sekcja polka" id="polka" aria-labelledby="h-polka">
+  <div class="wrap">
+    <div class="sekcja__glowa sekcja__glowa--rzad">
+      <h2 id="h-polka" class="h2">Tu jest Twoja półka.</h2>
+      <p class="lead">Firmy z Polski, sprawdzane według jawnych kryteriów. Każda ma metryczkę.</p>
+    </div>
+    <ul class="polka__lista">
+      <li class="karta">
+        <p class="karta__kat">Okna dachowe</p>
+        <h3 class="karta__nazwa">Fakro</h3>
+        <dl class="karta__m"><div><dt>Siedziba</dt><dd>Nowy Sącz</dd></div><div><dt>Kapitał</dt><dd>polski</dd></div></dl>
+        <p class="karta__fakt">Założona w 1991 r. w Nowym Sączu. Eksport to 70% sprzedaży (2023).</p>
+        <p class="zrodlo">Źródło: fakro.com, historia firmy</p>
+      </li>
+      <li class="karta">
+        <p class="karta__kat">Kosmetyki</p>
+        <h3 class="karta__nazwa">Ziaja</h3>
+        <dl class="karta__m"><div><dt>Siedziba</dt><dd>Gdańsk</dd></div><div><dt>Kapitał</dt><dd>polski, rodzinny</dd></div></dl>
+        <p class="karta__fakt">Ok. 504 mln zł przychodu w 2024 r., o 9,5% więcej niż rok wcześniej.</p>
+        <p class="zrodlo">Źródło: Wiadomości Kosmetyczne</p>
+      </li>
+      <li class="karta">
+        <p class="karta__kat">Żywność i napoje</p>
+        <h3 class="karta__nazwa">Maspex <span>Tymbark, Kubuś, Łowicz, Lubella</span></h3>
+        <dl class="karta__m"><div><dt>Siedziba</dt><dd>Wadowice</dd></div><div><dt>Kapitał</dt><dd>polski</dd></div></dl>
+        <p class="karta__fakt">Ok. 16 mld zł przychodów w 2024 r.</p>
+        <p class="zrodlo">Źródło: Forbes.pl</p>
+      </li>
+      <li class="karta">
+        <p class="karta__kat">AGD</p>
+        <h3 class="karta__nazwa">Amica</h3>
+        <dl class="karta__m"><div><dt>Siedziba</dt><dd>Wronki</dd></div><div><dt>Kapitał</dt><dd>polski</dd></div></dl>
+        <p class="karta__fakt">Ponad 2,4 mld zł przychodów grupy w 2025 r.</p>
+        <p class="zrodlo">Źródło: Amica Group</p>
+      </li>
+      <li class="karta">
+        <p class="karta__kat">Odzież</p>
+        <h3 class="karta__nazwa">LPP <span>Reserved, Sinsay, Mohito</span></h3>
+        <dl class="karta__m"><div><dt>Siedziba</dt><dd>Gdańsk</dd></div><div><dt>Kapitał</dt><dd>polski</dd></div></dl>
+        <p class="karta__fakt">23,1 mld zł przychodów w 2025 r. i 3748 sklepów w 35 krajach.</p>
+        <p class="zrodlo">Źródło: LPP, relacje inwestorskie</p>
+      </li>
+      <li class="karta">
+        <p class="karta__kat">Meble biurowe</p>
+        <h3 class="karta__nazwa">Nowy Styl</h3>
+        <dl class="karta__m"><div><dt>Siedziba</dt><dd>Krosno</dd></div><div><dt>Kapitał</dt><dd>polski, rodzinny</dd></div></dl>
+        <p class="karta__fakt">306,7 mln € przychodu w 2024 r.</p>
+        <p class="zrodlo">Źródło: Nowy Styl, informacja o firmie</p>
+      </li>
+    </ul>
+    <p class="drobny polka__nota">Prototyp: dane marek z researchu kampanii (XI 2026), weryfikowane przed publikacją.</p>
+    <a class="cta cta--obrys" href="#">Przeglądaj katalog</a>
+  </div>
+</section>
+
+<!-- ADRES + DEKLARACJA -->
+<section class="sekcja adres" id="deklaracja" aria-labelledby="h-adres">
+  <div class="wrap adres__siatka">
+    <figure class="adres__foto">
+      <img src="assets/img/hala.webp" width="1200" height="900" loading="lazy" alt="Wnętrze Hali Mirowskiej w Warszawie: stalowa konstrukcja dachu i długie alejki ze straganami.">
+      <figcaption class="fot">Hala Mirowska, Warszawa. Fot. Cybularny, CC BY 4.0, Wikimedia Commons</figcaption>
+    </figure>
+    <div class="adres__tekst">
+      <h2 id="h-adres" class="h2">Polskie to adres, nie pochodzenie.</h2>
+      <p>Polska firma to firma, która tu ma siedzibę, tu produkuje i tu płaci podatki. Jej założycielka może pochodzić z Wrocławia, z Kijowa albo z Lyonu. Dla Twojej okolicy liczy się, gdzie trafia pensja i podatek.</p>
+      <div class="deklaracja">
+        <h3 class="h3">Podpisz pod paragonem.</h3>
+        <ol>
+          <li>Kiedy mam porównywalny wybór, sprawdzam, czy produkt jest z Polski.</li>
+          <li>Raz w miesiącu świadomie kupuję coś od polskiej firmy, której wcześniej nie znałem(-am).</li>
+          <li>Gdy znajdę dobrą polską firmę, mówię o niej innym.</li>
+        </ol>
+        <a class="cta" href="#">Podpisz deklarację w 30 sekund</a>
+        <p class="drobny">Trzy proste zobowiązania. Żadnych składek, żadnych bojkotów.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="stopka">
+  <div class="wrap stopka__in">
+    <p class="logo logo--stopka"><span class="logo__znak" aria-hidden="true"></span>Postaw na Polskie</p>
+    <p class="drobny">Zdjęcia: Wikimedia Commons, autorzy i licencje w podpisach oraz w pliku CREDITS.md.</p>
+    <p class="stopka__pfl">© 2026 Copyright by <a href="https://www.pflgroup.pl" target="_blank" rel="noopener">PFL Group</a>. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+</body>
+</html>
