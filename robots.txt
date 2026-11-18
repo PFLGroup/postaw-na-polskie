@@ -1,0 +1,6 @@
+# Postaw na Polskie
+# Strony /dziekujemy/ mają meta noindex (celowo NIE blokujemy ich tutaj, żeby roboty widziały noindex).
+User-agent: *
+Allow: /
+
+Sitemap: https://postawnapolskie.pl/sitemap.xml

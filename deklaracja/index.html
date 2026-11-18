@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podpisz deklarację · Postaw na Polskie</title>
+<meta name="description" content="Trzy zobowiązania, które da się dotrzymać: sprawdzam, skąd jest produkt, poznaję polskie firmy, polecam dobre. Podpis zajmuje 30 sekund.">
+<link rel="canonical" href="https://postawnapolskie.pl/deklaracja/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Postaw na Polskie">
+<meta property="og:title" content="Podpisz deklarację">
+<meta property="og:description" content="Trzy zobowiązania, które da się dotrzymać: sprawdzam, skąd jest produkt, poznaję polskie firmy, polecam dobre. Podpis zajmuje 30 sekund.">
+<meta property="og:url" content="https://postawnapolskie.pl/deklaracja/">
+<meta property="og:image" content="https://postawnapolskie.pl/assets/img/og.png">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ac0311">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/poltawski-nowy-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/pages/formularze.css">
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/pages/formularze.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+<header class="naglowek">
+  <div class="wrap">
+    <a class="znak" href="../index.html" aria-label="Postaw na Polskie, strona główna"><span class="znak__kod" aria-hidden="true"></span>Postaw na Polskie</a>
+    <div class="naglowek__akcje">
+      <a class="cta" href="../deklaracja/index.html">Podpisz deklarację</a>
+      <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu">
+  <div class="menu__in">
+    <button class="menu-btn menu__zamknij" type="button" data-menu-close>Zamknij</button>
+    <nav aria-label="Główna">
+      <ol>
+        <li><a href="../index.html">Start</a></li>
+        <li><a href="../manifest/index.html">Manifest</a></li>
+        <li><a href="../dlaczego/index.html">Dlaczego to działa</a></li>
+        <li><a href="../jak-rozpoznac/index.html">Jak rozpoznać polski produkt</a></li>
+        <li><a href="../katalog/index.html">Polskie marki</a></li>
+        <li><a href="../zglos-firme/index.html">Zgłoś firmę</a></li>
+        <li><a href="../deklaracja/index.html">Podpisz deklarację</a></li>
+        <li><a href="../dla-firm/index.html">Dla firm</a></li>
+        <li><a href="../dolacz/index.html">Ambasadorzy i partnerzy</a></li>
+        <li><a href="../media/index.html">Dla mediów</a></li>
+        <li><a href="../kontakt/index.html">Kontakt</a></li>
+      </ol>
+    </nav>
+  </div>
+</dialog>
+
+<main id="tresc">
+    <section class="sekcja f-deklaracja" aria-labelledby="podpis-h">
+    <div class="wrap siatka uklad">
+      <div class="uklad__glowny">
+        <!-- ENDPOINT: klient wpisuje adres usługi formularzy (np. Formspree / własne API) w data-endpoint oraz w action (wersja bez JS). Do tego czasu main.js przechodzi wprost na stronę podziękowania. -->
+        <form class="formularz" data-pnp-form data-thanks="../dziekujemy/deklaracja/index.html" action="../dziekujemy/deklaracja/index.html" method="post">
+          <div class="etykieta deklaracja">
+            <h1 id="podpis-h" class="etykieta__tytul">Stawiam na polskie.</h1>
+            <div class="wiersze">
+              <div class="wiersz"><span class="wiersz__k">Rodzaj</span><span class="wiersz__v">Deklaracja kampanii Postaw na Polskie. Zobowiązanie osobiste, dobrowolne</span></div>
+              <div class="wiersz"><span class="wiersz__k">Koszt</span><span class="wiersz__v">0 zł. Żadnych składek, żadnych bojkotów.</span></div>
+              <div class="wiersz wiersz--sklad"><span class="wiersz__k">Skład</span>
+                <ol class="wiersz__v zobowiazania">
+                  <li>Kiedy mam porównywalny wybór, sprawdzam, czy produkt jest z Polski.</li>
+                  <li>Raz w miesiącu świadomie kupuję coś od polskiej firmy, której wcześniej nie znałem(-am).</li>
+                  <li>Gdy znajdę dobrą polską firmę, mówię o niej innym.</li>
+                </ol>
+              </div>
+              <div class="wiersz"><span class="wiersz__k">Ważność</span><span class="wiersz__v">Do odwołania. Podpis wycofasz w każdej chwili.</span></div>
+              <div class="wiersz wiersz--kupujacy">
+                <span class="wiersz__k" aria-hidden="true">Kupujący</span>
+                <div class="wiersz__v kupujacy">
+                  <div class="pole">
+                    <label for="d-imie">Imię</label>
+                    <input type="text" id="d-imie" name="imie" required autocomplete="given-name" placeholder="np. Ania" maxlength="40" data-msg="To pole jest potrzebne, żeby podpis miał autora.">
+                  </div>
+                  <span class="kupujacy__przecinek" aria-hidden="true">,</span>
+                  <div class="pole">
+                    <label for="d-miejscowosc">Miejscowość (opcjonalnie)</label>
+                    <input type="text" id="d-miejscowosc" name="miejscowosc" autocomplete="address-level2" maxlength="60" aria-describedby="d-miejscowosc-pomoc">
+                    <p class="pomoc" id="d-miejscowosc-pomoc">Pokażemy na liście tylko, jeśli zaznaczysz zgodę niżej.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="formularz__reszta">
+            <div class="pole">
+              <label for="d-email">E-mail</label>
+              <input type="email" id="d-email" name="email" required autocomplete="email" inputmode="email" aria-describedby="d-email-pomoc" data-msg="To pole jest potrzebne, żeby wysłać Ci link do potwierdzenia.">
+              <p class="pomoc" id="d-email-pomoc">Wyślemy jeden link do potwierdzenia podpisu. Dopiero kliknięcie w link dopisuje Cię do licznika. Bez kliknięcia nie zapiszemy podpisu, a dane usuniemy po <span class="do-uzupelnienia">[WYPEŁNIA KLIENT: np. 30]</span> dniach. Adresu nigdzie nie publikujemy.</p>
+            </div>
+
+            <fieldset class="zgody">
+              <legend class="dane">Zgody</legend>
+              <div class="zgoda">
+                <input type="checkbox" id="d-zgoda" name="zgoda_podpis" value="tak" required data-msg="Bez tej zgody nie możemy zapisać podpisu.">
+                <label for="d-zgoda">Zgadzam się na przetwarzanie mojego imienia, miejscowości i adresu e-mail w celu zapisania i potwierdzenia podpisu pod deklaracją. Zgodę mogę wycofać w każdej chwili.</label>
+              </div>
+              <div class="zgoda">
+                <input type="checkbox" id="d-lista" name="zgoda_lista" value="tak">
+                <label for="d-lista">Pokaż moje imię i miejscowość na publicznej liście podpisów. (opcjonalnie)</label>
+              </div>
+              <div class="zgoda">
+                <input type="checkbox" id="d-newsletter" name="zgoda_newsletter" value="tak">
+                <label for="d-newsletter">Chcę dostawać list kampanii: nowe firmy w katalogu, raz na dwa tygodnie. Wypiszesz się jednym kliknięciem. Zapis potwierdzisz osobnym przyciskiem w e-mailu. (opcjonalnie)</label>
+              </div>
+            </fieldset>
+            <div class="sr-only" aria-hidden="true"><label for="d-hp">Zostaw to pole puste</label><input type="text" id="d-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+            <p class="klauzula">Administratorem danych jest <!-- WYPEŁNIA KLIENT: pełna nazwa organizatora, adres, KRS/NIP --><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: pełna nazwa organizatora]</span>. Dane służą do policzenia i potwierdzenia podpisu. Szczegóły: <a href="../prywatnosc/index.html">Polityka prywatności</a>.</p>
+            <p class="blad" data-form-error hidden tabindex="-1">Coś nie zadziałało po naszej stronie. Twoje dane nie zniknęły z formularza. Spróbuj ponownie za chwilę albo napisz na <span class="do-uzupelnienia">[WYPEŁNIA KLIENT: e-mail kampanii]</span>.</p>
+            <p class="f-po-podpisie">Po kliknięciu dostajesz e-mail z linkiem potwierdzającym, a na następnej stronie etykietę „Kupujący: [Twoje imię]” do pobrania.</p>
+            <button class="cta" type="submit">Podpisuję deklarację</button>
+          </div>
+        </form>
+        <!-- LICZNIK PODPISÓW: nie pokazujemy go, dopóki nie ma backendu i progu 500 potwierdzonych podpisów (kierunek A).
+             Miejsce wpięcia: tutaj, pod formularzem, np. <p class="licznik" aria-live="polite">Podpisało już [N] osób. Ostatnio: [Imię] z [Miejscowość].</p>
+             Tylko podpisy potwierdzone e-mailem; imię i miejscowość tylko za zgodą „zgoda_lista”. Liczby nigdy nie wpisujemy ręcznie. -->
+      </div>
+
+      <aside class="uklad__bok" aria-label="O deklaracji">
+        <p class="lead f-deklaracja__lead">Trzy zobowiązania, które da się dotrzymać. Podpis zajmuje 30 sekund. Liczymy tylko potwierdzone.</p>
+        <h2 class="h-l">Co dostajesz po podpisie</h2>
+        <ul class="lista-kreska f-dostajesz">
+          <li><strong>Etykietę z Twoim imieniem</strong> w wierszu „Kupujący”, do pobrania jako obrazek PNG.</li>
+          <li><strong>Miejsce w liczniku podpisów</strong>, gdy potwierdzisz e-mail.</li>
+          <li><strong>List kampanii</strong> co dwa tygodnie, z nowymi firmami w katalogu. Tylko jeśli zaznaczysz tę zgodę.</li>
+        </ul>
+        <h2 id="co-sie-dzieje-h" class="h-l">Co się dzieje z podpisami</h2>
+        <ul class="lista-kreska">
+          <li>Licznik pokażemy publicznie. Rośnie dopiero po potwierdzeniu e-maila.</li>
+          <li>Imię i miejscowość pokazujemy tylko, jeśli się zgodzisz.</li>
+          <li>Gdy dojdziemy do progu, <span class="do-uzupelnienia">[WYPEŁNIA KLIENT: próg i co wtedy zrobimy]</span>.</li>
+          <li>Możesz wycofać podpis w każdej chwili: link jest w każdym e-mailu albo napisz na <span class="do-uzupelnienia">[WYPEŁNIA KLIENT: e-mail kampanii]</span>.</li>
+        </ul>
+        <h2 class="h-l">Potwierdzenie w dwóch krokach</h2>
+        <ol class="kroki">
+          <li><span class="dane">Krok 1</span> Klikasz „Podpisuję”. Dostajesz e-mail „Potwierdź swój podpis. Jedno kliknięcie”.</li>
+          <li><span class="dane">Krok 2</span> Klikasz link w wiadomości. Dopiero wtedy podpis trafia do licznika.</li>
+        </ol>
+        <p class="maly">Zapis na list kampanii potwierdzasz w tym samym e-mailu, osobnym przyciskiem. Jedna zgoda nie zastępuje drugiej.</p>
+        <p><a class="link-dalej" href="../dlaczego/index.html">Najpierw dowody</a></p>
+      </aside>
+      <!-- OSTATNIE PODPISY: sekcja „Ostatnie podpisy” (lista „[Imię] z [Miejscowość]”, tylko za zgodą, bez dat co do minuty, bez e-maili)
+           wpinamy razem z licznikiem, gdy będzie backend. -->
+    </div>
+  </section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka__siatka">
+      <div>
+        <h2>Metryczka kampanii</h2>
+        <dl class="wiersze">
+          <div class="wiersz"><dt>Nazwa</dt><dd>Postaw na Polskie</dd></div>
+          <div class="wiersz"><dt>Rodzaj</dt><dd>Kampania społeczna</dd></div>
+          <div class="wiersz"><dt>Organizator</dt><dd>[WYPEŁNIA KLIENT: nazwa, KRS/NIP, adres]</dd></div>
+          <div class="wiersz"><dt>Kontakt</dt><dd>[WYPEŁNIA KLIENT: e-mail]</dd></div>
+        </dl>
+      </div>
+      <nav aria-label="Kampania">
+        <h2>Kampania</h2>
+        <ul>
+          <li><a href="../manifest/index.html">Manifest</a></li>
+          <li><a href="../dlaczego/index.html">Dowody</a></li>
+          <li><a href="../katalog/index.html">Katalog</a></li>
+          <li><a href="../zasady-katalogu/index.html">Zasady katalogu</a></li>
+          <li><a href="../dla-firm/index.html">Dla firm</a></li>
+          <li><a href="../media/index.html">Media</a></li>
+          <li><a href="../kontakt/index.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informacje prawne">
+        <h2>Informacje</h2>
+        <ul>
+          <li><a href="../regulamin/index.html">Regulamin</a></li>
+          <li><a href="../prywatnosc/index.html">Prywatność i cookies</a></li>
+          <li><a href="../dostepnosc/index.html">Dostępność</a></li>
+        </ul>
+        <div class="kod-kreskowy" role="img" aria-label="Ozdobny kod kreskowy"></div>
+      </nav>
+    </div>
+    <p class="stopka__deklaracja">Postaw na Polskie to kampania społeczna. Nie jest związana z żadną partią. Nie przyjmuje opłat za wpisy do katalogu. [WYPEŁNIA KLIENT: potwierdzić]</p>
+    <p class="footer-copy">© <span id="year">2026</span> Copyright by <a href="https://www.pflgroup.pl" target="_blank" rel="noopener">PFL Group</a>. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+</body>
+</html>

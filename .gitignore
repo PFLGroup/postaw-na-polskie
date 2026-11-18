@@ -1,0 +1,10 @@
+# Materiały robocze — NIE publikować (repo publiczne / GitHub Pages)
+_brief/
+_research/
+# Wynik tools/build.py
+dist/
+# Śmieci systemowe
+Thumbs.db
+desktop.ini
+.DS_Store
+__pycache__/

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt · Postaw na Polskie</title>
+<meta name="description" content="Napisz do organizatorów kampanii Postaw na Polskie: pytania o kampanię, katalog, błędy w metryczce firmy, partnerstwo, media, dane osobowe.">
+<link rel="canonical" href="https://postawnapolskie.pl/kontakt/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Postaw na Polskie">
+<meta property="og:title" content="Kontakt">
+<meta property="og:description" content="Napisz do organizatorów kampanii Postaw na Polskie: pytania o kampanię, katalog, błędy w metryczce firmy, partnerstwo, media, dane osobowe.">
+<meta property="og:url" content="https://postawnapolskie.pl/kontakt/">
+<meta property="og:image" content="https://postawnapolskie.pl/assets/img/og.png">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ac0311">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/poltawski-nowy-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/pages/formularze.css">
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/pages/formularze.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+<header class="naglowek">
+  <div class="wrap">
+    <a class="znak" href="../index.html" aria-label="Postaw na Polskie, strona główna"><span class="znak__kod" aria-hidden="true"></span>Postaw na Polskie</a>
+    <div class="naglowek__akcje">
+      <a class="cta" href="../deklaracja/index.html">Podpisz deklarację</a>
+      <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu">
+  <div class="menu__in">
+    <button class="menu-btn menu__zamknij" type="button" data-menu-close>Zamknij</button>
+    <nav aria-label="Główna">
+      <ol>
+        <li><a href="../index.html">Start</a></li>
+        <li><a href="../manifest/index.html">Manifest</a></li>
+        <li><a href="../dlaczego/index.html">Dlaczego to działa</a></li>
+        <li><a href="../jak-rozpoznac/index.html">Jak rozpoznać polski produkt</a></li>
+        <li><a href="../katalog/index.html">Polskie marki</a></li>
+        <li><a href="../zglos-firme/index.html">Zgłoś firmę</a></li>
+        <li><a href="../deklaracja/index.html">Podpisz deklarację</a></li>
+        <li><a href="../dla-firm/index.html">Dla firm</a></li>
+        <li><a href="../dolacz/index.html">Ambasadorzy i partnerzy</a></li>
+        <li><a href="../media/index.html">Dla mediów</a></li>
+        <li><a href="../kontakt/index.html">Kontakt</a></li>
+      </ol>
+    </nav>
+  </div>
+</dialog>
+
+<main id="tresc">
+  <section class="f-hero">
+    <div class="wrap f-hero__siatka">
+      <div class="f-hero__tekst">
+        <h1>Napisz do nas</h1>
+        <p class="lead">Odpowiadamy w dni robocze. Jeśli piszesz o błędzie w katalogu, podaj nazwę firmy.</p>
+      </div>
+      <div class="f-hero__bok">
+        <div class="etykieta f-metryczka">
+          <p class="etykieta__tytul">Zanim napiszesz</p>
+          <dl class="wiersze">
+          <div class="wiersz"><dt>Firma do katalogu</dt><dd><a href="../zglos-firme/index.html">Formularz zgłoszenia</a> jest szybszy</dd></div>
+          <div class="wiersz"><dt>Media</dt><dd><a href="../media/index.html">Liczby, metryczka, kontakt prasowy</a></dd></div>
+          <div class="wiersz"><dt>Partnerstwo</dt><dd><a href="../dolacz/index.html">Ambasadorzy i partnerzy</a></dd></div>
+          <div class="wiersz"><dt>Odpowiedź</dt><dd>W dni robocze, od osoby z kampanii</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja" aria-labelledby="wiadomosc-h">
+    <div class="wrap siatka uklad">
+      <div class="uklad__glowny">
+        <h2 id="wiadomosc-h" class="h-xl">Wiadomość</h2>
+        <!-- ENDPOINT: klient wpisuje adres usługi formularzy (np. Formspree / własne API) w data-endpoint oraz w action (wersja bez JS). Do tego czasu main.js przechodzi wprost na stronę podziękowania. -->
+        <form class="formularz" data-pnp-form data-thanks="../dziekujemy/kontakt/index.html" action="../dziekujemy/kontakt/index.html" method="post">
+          <div class="pole">
+            <label for="k-temat">Temat</label>
+            <select id="k-temat" name="temat" required data-msg="Wybierz temat, żeby wiadomość trafiła do właściwej osoby.">
+              <option value="">Wybierz z listy</option>
+              <option>Pytanie o kampanię</option>
+              <option>Katalog i zgłoszenia</option>
+              <option>Błąd w metryczce firmy</option>
+              <option>Partnerstwo</option>
+              <option>Media</option>
+              <option>Dane osobowe</option>
+            </select>
+          </div>
+          <div class="pole">
+            <label for="k-imie">Imię</label>
+            <input type="text" id="k-imie" name="imie" required autocomplete="given-name" maxlength="60" data-msg="To pole jest potrzebne, żebyśmy wiedzieli, jak się do Ciebie zwracać.">
+          </div>
+          <div class="pole">
+            <label for="k-email">E-mail</label>
+            <input type="email" id="k-email" name="email" required autocomplete="email" inputmode="email" data-msg="To pole jest potrzebne, żebyśmy mogli odpisać.">
+          </div>
+          <div class="pole">
+            <label for="k-tresc">Wiadomość</label>
+            <textarea id="k-tresc" name="wiadomosc" required maxlength="3000" rows="8" data-msg="To pole jest potrzebne, żebyśmy wiedzieli, w czym pomóc."></textarea>
+          </div>
+          <div class="zgoda">
+            <input type="checkbox" id="k-info" name="info_rodo" value="tak" required>
+            <label for="k-info">Zapoznałem(-am) się z <a href="../prywatnosc/index.html">informacją o przetwarzaniu danych</a>.</label>
+          </div>
+          <div class="sr-only" aria-hidden="true"><label for="k-hp">Zostaw to pole puste</label><input type="text" id="k-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+          <p class="klauzula">Administratorem danych jest <!-- WYPEŁNIA KLIENT: pełna nazwa organizatora, adres, KRS/NIP --><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: pełna nazwa organizatora]</span>. Dane przetwarzamy, żeby odpowiedzieć na wiadomość (prawnie uzasadniony interes). Szczegóły: <a href="../prywatnosc/index.html">Polityka prywatności</a>.</p>
+          <p class="blad" data-form-error hidden tabindex="-1">Coś nie zadziałało po naszej stronie. Twoje dane nie zniknęły z formularza. Spróbuj ponownie za chwilę albo napisz na <span class="do-uzupelnienia">[WYPEŁNIA KLIENT: e-mail kampanii]</span>.</p>
+          <button class="cta" type="submit">Wyślij</button>
+        </form>
+      </div>
+      <aside class="uklad__bok" aria-labelledby="organizator-h">
+        <div class="etykieta">
+          <h2 id="organizator-h" class="etykieta__tytul">Organizator</h2>
+          <dl class="wiersze">
+            <div class="wiersz"><dt>Nazwa</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: pełna nazwa]</span></dd></div>
+            <div class="wiersz"><dt>Adres</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: adres]</span></dd></div>
+            <div class="wiersz"><dt>KRS / NIP</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: numery]</span></dd></div>
+            <div class="wiersz"><dt>E-mail</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: e-mail kampanii]</span></dd></div>
+            <div class="wiersz"><dt>Dane osobowe</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: e-mail, IOD]</span></dd></div>
+            <div class="wiersz"><dt>Media</dt><dd><a href="../media/index.html">Dla mediów</a></dd></div>
+          </dl>
+        </div>
+        <p class="maly">Chcesz zgłosić firmę do katalogu? Szybciej będzie przez <a href="../zglos-firme/index.html">formularz zgłoszenia</a>.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka__siatka">
+      <div>
+        <h2>Metryczka kampanii</h2>
+        <dl class="wiersze">
+          <div class="wiersz"><dt>Nazwa</dt><dd>Postaw na Polskie</dd></div>
+          <div class="wiersz"><dt>Rodzaj</dt><dd>Kampania społeczna</dd></div>
+          <div class="wiersz"><dt>Organizator</dt><dd>[WYPEŁNIA KLIENT: nazwa, KRS/NIP, adres]</dd></div>
+          <div class="wiersz"><dt>Kontakt</dt><dd>[WYPEŁNIA KLIENT: e-mail]</dd></div>
+        </dl>
+      </div>
+      <nav aria-label="Kampania">
+        <h2>Kampania</h2>
+        <ul>
+          <li><a href="../manifest/index.html">Manifest</a></li>
+          <li><a href="../dlaczego/index.html">Dowody</a></li>
+          <li><a href="../katalog/index.html">Katalog</a></li>
+          <li><a href="../zasady-katalogu/index.html">Zasady katalogu</a></li>
+          <li><a href="../dla-firm/index.html">Dla firm</a></li>
+          <li><a href="../media/index.html">Media</a></li>
+          <li><a href="../kontakt/index.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informacje prawne">
+        <h2>Informacje</h2>
+        <ul>
+          <li><a href="../regulamin/index.html">Regulamin</a></li>
+          <li><a href="../prywatnosc/index.html">Prywatność i cookies</a></li>
+          <li><a href="../dostepnosc/index.html">Dostępność</a></li>
+        </ul>
+        <div class="kod-kreskowy" role="img" aria-label="Ozdobny kod kreskowy"></div>
+      </nav>
+    </div>
+    <p class="stopka__deklaracja">Postaw na Polskie to kampania społeczna. Nie jest związana z żadną partią. Nie przyjmuje opłat za wpisy do katalogu. [WYPEŁNIA KLIENT: potwierdzić]</p>
+    <p class="footer-copy">© <span id="year">2026</span> Copyright by <a href="https://www.pflgroup.pl" target="_blank" rel="noopener">PFL Group</a>. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+</body>
+</html>

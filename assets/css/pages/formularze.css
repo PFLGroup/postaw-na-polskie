@@ -1,0 +1,121 @@
+/* Postaw na Polskie — strony konwersji i prawne:
+   /deklaracja, /dolacz, /kontakt, /dziekujemy/*, /regulamin, /prywatnosc, /dostepnosc, 404.
+   Tylko zmienne z base.css. Ostre krawędzie, zero ruchu poza hoverem z base.css. */
+
+/* ---------- układ: treść 7/12 + bok 4/12 ---------- */
+.uklad { row-gap: var(--s-5); align-items: start; }
+.uklad__glowny { grid-column: 1 / span 7; min-width: 0; }
+.uklad__bok { grid-column: 9 / -1; min-width: 0; }
+.uklad__glowny > h2.h-xl { margin-bottom: var(--s-3); }
+.uklad__bok .h-l { margin: 0 0 var(--s-2); }
+.uklad__bok .h-l + * { margin-top: 0; }
+.uklad__bok > * + .h-l { margin-top: var(--s-4); }
+@media (min-width: 761px) { .uklad__bok { position: sticky; top: calc(4rem + var(--s-3)); } }
+
+.lista-kreska { list-style: none; margin: 0 0 var(--s-3); padding: 0; border-top: var(--linia); }
+.lista-kreska li { padding: 0.6rem 0; border-bottom: var(--linia); font-size: var(--t-s); }
+.kroki { list-style: none; margin: 0 0 var(--s-2); padding: 0; }
+.kroki li { display: grid; gap: 0.2rem; padding: 0.6rem 0; border-bottom: var(--linia); font-size: var(--t-s); }
+
+/* ---------- formularz ---------- */
+.formularz { max-width: 46rem; }
+.formularz__reszta { margin-top: var(--s-4); }
+.zgody { margin: 0 0 var(--s-2); }
+.zgody legend { margin-bottom: var(--s-2); }
+.opcje { display: grid; gap: 0.15rem; }
+.opcje .zgoda { margin: 0; padding: 0.35rem 0; }
+.zgoda label { cursor: pointer; }
+.zgoda input { cursor: pointer; }
+.klauzula { font-size: var(--t-xs); color: var(--tusz-gleboki); border-top: var(--linia); padding-top: var(--s-1); margin-top: var(--s-3); }
+.formularz .blad { border-left: var(--linia-gruba); padding: var(--s-1) 0 var(--s-1) var(--s-2); }
+.formularz button[type="submit"] { margin-top: var(--s-1); }
+input[type="url"]::placeholder, input::placeholder { color: var(--tusz-gleboki); opacity: 0.75; }
+
+/* ---------- deklaracja jako etykieta, ostatni wiersz = formularz ---------- */
+.deklaracja { padding-bottom: var(--s-3); }
+.deklaracja .dane { margin: 0 0 var(--s-1); }
+.deklaracja .etykieta__tytul { margin-bottom: 0; }
+.zobowiazania { margin: 0; padding-left: 1.3em; display: grid; gap: 0.45rem; }
+.zobowiazania li { font-family: var(--f-display); font-size: var(--t-l); line-height: 1.15; }
+.wiersz--kupujacy { align-items: start; padding-top: var(--s-2); }
+.wiersz--kupujacy > .wiersz__k { font-family: var(--f-display); font-size: var(--t-xl); line-height: 1; }
+.kupujacy { display: flex; flex-wrap: wrap; align-items: start; gap: 0 var(--s-1); }
+.kupujacy .pole { flex: 1 1 10rem; margin: 0; min-width: 0; }
+.kupujacy__przecinek { font-family: var(--f-display); font-size: var(--t-xl); line-height: 1; padding-top: 1.6rem; }
+@media (max-width: 560px) {
+  .deklaracja .wiersz { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+  .kupujacy__przecinek { display: none; }
+  .kupujacy { gap: var(--s-2); }
+}
+
+/* ---------- podziękowania: udostępnianie ---------- */
+.udostepnij { list-style: none; margin: var(--s-3) 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-1); }
+.udostepnij .cta { min-height: 2.75rem; font-size: var(--t-s); }
+.gotowy-tekst textarea { min-height: 10rem; }
+.ponow { margin-top: var(--s-3); }
+.dalej { margin-top: var(--s-3); }
+
+/* ---------- strony prawne ---------- */
+.baner-prawny { margin: var(--s-3) 0 0; max-width: 64ch; }
+.prawne > h2:first-child { margin-top: 0; }
+.prawne ol ol { margin-top: 0.4em; }
+.prawne .wiersze { max-width: 64ch; margin-bottom: var(--s-3); }
+.spis { border: var(--ramka); padding: var(--s-2) var(--s-3); margin-bottom: var(--s-4); max-width: 64ch; }
+.spis .dane { margin: 0 0 var(--s-1); }
+.spis ol { margin: 0; }
+.tabela-ramka { margin: var(--s-2) 0 var(--s-3); }
+
+/* ---------- 404 ---------- */
+.brak { border-bottom: 0; }
+.brak__etykieta { max-width: 44rem; margin-bottom: var(--s-4); }
+.brak .brak__tytul { font-size: var(--t-2xl); max-width: 14ch; padding-bottom: var(--s-2); margin-bottom: var(--s-1); border-bottom: var(--linia-gruba); }
+.brak__akcje { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); }
+
+/* Znacznik [WYPEŁNIA KLIENT] w tekście: base.css daje .do-uzupelnienia padding bloku, który w linii nachodzi na sąsiednie wiersze. */
+span.do-uzupelnienia { display: inline; padding: 0 0.3em; border-width: 1px; font-size: inherit; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* =====================================================================
+   POPRAWKI po krytyce 1: hero bez pustej prawej połowy, deklaracja = etykieta-bohater
+   ===================================================================== */
+.sekcja.sekcja--bez-linii { border-top: 0; padding-top: var(--s-3); }
+
+/* hero stron prostych: tekst + metryczka strony */
+.f-hero { padding: var(--s-4) 0; border-bottom: var(--linia-gruba); }
+.f-hero__siatka { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--s-4); align-items: end; }
+.f-hero__tekst { grid-column: 1 / 8; min-width: 0; }
+.f-hero h1 { font-size: var(--t-2xl); max-width: 14ch; }
+.f-hero .lead { margin: var(--s-3) 0 0; }
+.f-hero__bok { grid-column: 9 / -1; min-width: 0; }
+.f-metryczka { padding-bottom: var(--s-1); }
+.f-metryczka .etykieta__tytul { font-size: var(--t-l); line-height: 1.05; padding-bottom: 0.4rem; }
+.f-metryczka .wiersz { grid-template-columns: minmax(6.5rem, 40%) 1fr; }
+@media (max-width: 960px) { .f-hero__tekst, .f-hero__bok { grid-column: 1 / -1; } .f-hero__bok { max-width: 34rem; } }
+@media (max-width: 400px) { .f-metryczka .wiersz { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } }
+
+/* /deklaracja: etykieta w dużej skali, H1 = tytuł etykiety */
+.f-deklaracja { padding-top: var(--s-4); }
+.f-deklaracja .deklaracja { border-width: 3px; padding: var(--s-3) var(--s-4) var(--s-4); }
+.f-deklaracja .deklaracja .etykieta__tytul { font-size: clamp(3.1rem, 0.9rem + 6.6vw, 8.5rem); line-height: 0.86; letter-spacing: -0.025em; max-width: none; padding-bottom: var(--s-2); border-bottom-width: 12px; }
+.f-deklaracja .deklaracja .wiersz { grid-template-columns: minmax(7rem, 22%) 1fr; }
+.f-deklaracja .zobowiazania li { font-size: clamp(1.35rem, 0.95rem + 1.5vw, 2.35rem); line-height: 1.08; }
+.f-deklaracja__lead { margin-bottom: var(--s-4); }
+.f-dostajesz strong { font-weight: 900; }
+.f-po-podpisie { font-size: var(--t-s); border-left: var(--linia-gruba); padding-left: var(--s-2); margin: var(--s-3) 0 var(--s-2); }
+@media (max-width: 560px) {
+  .f-deklaracja .deklaracja { padding: var(--s-2); }
+  .f-deklaracja .deklaracja .wiersz { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* podziękowanie po deklaracji: etykieta do pobrania */
+.f-twoja { border: var(--ramka); padding: var(--s-3); margin-bottom: var(--s-5); }
+.f-twoja h2 { margin-bottom: var(--s-2); }
+.f-twoja p:last-child { margin-bottom: 0; }
+
+/* 404: etykieta + bok obok siebie */
+.brak__siatka { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--s-3); align-items: end; }
+.brak__siatka > .brak__etykieta { grid-column: 1 / 8; margin-bottom: 0; max-width: none; }
+.brak__bok { grid-column: 9 / -1; }
+.brak__bok .brak__akcje { margin-bottom: var(--s-3); }
+.brak__lista a { text-decoration: none; font-weight: 700; }
+.brak__lista a:hover { text-decoration: underline; }
+@media (max-width: 960px) { .brak__siatka > .brak__etykieta, .brak__bok { grid-column: 1 / -1; } }

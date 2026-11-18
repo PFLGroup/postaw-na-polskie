@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katalog polskich firm i marek. Sprawdzone według kryteriów · Postaw na Polskie</title>
+<meta name="description" content="Firmy z Polski z jawną metryczką: siedziba, produkcja, kapitał, podatki. Bez płatnych wpisów.">
+<link rel="canonical" href="https://postawnapolskie.pl/katalog/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Postaw na Polskie">
+<meta property="og:title" content="Katalog polskich firm i marek. Sprawdzone według kryteriów">
+<meta property="og:description" content="Firmy z Polski z jawną metryczką: siedziba, produkcja, kapitał, podatki. Bez płatnych wpisów.">
+<meta property="og:url" content="https://postawnapolskie.pl/katalog/">
+<meta property="og:image" content="https://postawnapolskie.pl/assets/img/og.png">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ac0311">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/poltawski-nowy-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/pages/katalog.css">
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/pages/katalog.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+<header class="naglowek">
+  <div class="wrap">
+    <a class="znak" href="../index.html" aria-label="Postaw na Polskie, strona główna"><span class="znak__kod" aria-hidden="true"></span>Postaw na Polskie</a>
+    <div class="naglowek__akcje">
+      <a class="cta" href="../deklaracja/index.html">Podpisz deklarację</a>
+      <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu">
+  <div class="menu__in">
+    <button class="menu-btn menu__zamknij" type="button" data-menu-close>Zamknij</button>
+    <nav aria-label="Główna">
+      <ol>
+        <li><a href="../index.html">Start</a></li>
+        <li><a href="../manifest/index.html">Manifest</a></li>
+        <li><a href="../dlaczego/index.html">Dlaczego to działa</a></li>
+        <li><a href="../jak-rozpoznac/index.html">Jak rozpoznać polski produkt</a></li>
+        <li><a href="../katalog/index.html">Polskie marki</a></li>
+        <li><a href="../zglos-firme/index.html">Zgłoś firmę</a></li>
+        <li><a href="../deklaracja/index.html">Podpisz deklarację</a></li>
+        <li><a href="../dla-firm/index.html">Dla firm</a></li>
+        <li><a href="../dolacz/index.html">Ambasadorzy i partnerzy</a></li>
+        <li><a href="../media/index.html">Dla mediów</a></li>
+        <li><a href="../kontakt/index.html">Kontakt</a></li>
+      </ol>
+    </nav>
+  </div>
+</dialog>
+
+<main id="tresc">
+<section class="otwarcie kat-hero" aria-labelledby="kat-h1">
+  <div class="wrap siatka">
+    <div class="kat-hero__tekst">
+      <h1 id="kat-h1">Polska półka</h1>
+      <p class="lead">Każda firma ma tu metryczkę z czterech pól. Nie ma tu płatnych wpisów ani reklam.</p>
+      <p class="kat-hero__stan">Katalog w przygotowaniu: każdą firmę weryfikujemy i publikujemy za jej zgodą.</p>
+      <a class="link-dalej" href="../zasady-katalogu/index.html">Pełne kryteria</a>
+    </div>
+    <div class="kat-hero__metr">
+      <table class="spkt">
+        <caption class="sr-only">Jak czytać metryczkę: cztery pola</caption>
+        <thead>
+          <tr>
+            <th scope="col"><span class="spkt__lit" aria-hidden="true">S</span><span class="spkt__pole">Siedziba</span></th>
+            <th scope="col"><span class="spkt__lit" aria-hidden="true">P</span><span class="spkt__pole">Produkcja</span></th>
+            <th scope="col"><span class="spkt__lit" aria-hidden="true">K</span><span class="spkt__pole">Kapitał</span></th>
+            <th scope="col"><span class="spkt__lit" aria-hidden="true">T</span><span class="spkt__pole">Podatki</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Firma zarejestrowana w Polsce.</td>
+            <td>Produkty wytwarzane w Polsce.</td>
+            <td>Kontrola w rękach osób lub podmiotów z Polski.</td>
+            <td>Podatek dochodowy rozliczany w Polsce.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="spkt__legenda"><b aria-hidden="true">—</b> pole w weryfikacji. Wpisujemy je, gdy sprawdzimy je w rejestrze albo dokumencie.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap siatka kat" aria-label="Katalog marek">
+  <div class="kat__filtr">
+    <form class="filtr" id="filtr" role="search" hidden>
+      <fieldset>
+        <legend>Filtruj półkę</legend>
+        <div class="pole">
+          <label for="f-szukaj">Szukaj po nazwie</label>
+          <input type="search" id="f-szukaj" name="q" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="pole">
+          <label for="f-kategoria">Kategoria</label>
+          <select id="f-kategoria" name="k"><option value="">Wszystkie kategorie</option></select>
+        </div>
+        <div class="pole">
+          <label for="f-woj">Województwo</label>
+          <select id="f-woj" name="w" aria-describedby="f-woj-pomoc"><option value="">Cały kraj</option></select>
+          <p class="maly" id="f-woj-pomoc">Województwo podajemy tylko tam, gdzie research wskazał miasto siedziby.</p>
+        </div>
+        <button class="filtr__wyczysc" type="reset">Wyczyść filtry</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="kat__polka">
+    <p class="licznik" id="licznik" aria-live="polite" aria-atomic="true">Wczytujemy półkę…</p>
+    <ul class="polka" id="polka" data-zrodlo="../data/marki.json"></ul>
+    <div class="pusto" id="pusto" hidden>
+      <p>Nie mamy jeszcze firmy w tej kategorii w tym województwie. Znasz taką? Zgłoś ją.</p>
+      <a class="cta" href="../zglos-firme/index.html">Zgłoś polską firmę</a>
+    </div>
+    <div class="pusto" id="blad-danych" hidden>
+      <p>Nie udało się wczytać katalogu. Odśwież stronę za chwilę.</p>
+      <a class="link-dalej" href="../zglos-firme/index.html">Zgłoś polską firmę</a>
+    </div>
+    <noscript>
+      <div class="pusto">
+        <p>Filtr i lista marek potrzebują JavaScriptu. Jeśli go nie włączysz, wciąż możesz zgłosić firmę do katalogu albo przeczytać kryteria.</p>
+        <p><a class="cta" href="../zglos-firme/index.html">Zgłoś polską firmę</a></p>
+        <p><a class="link-dalej" href="../zasady-katalogu/index.html">Zasady katalogu</a></p>
+      </div>
+    </noscript>
+  </div>
+</section>
+
+<section class="pas-cta" aria-labelledby="cta-tyt">
+  <div class="wrap siatka">
+    <h2 id="cta-tyt">Znasz firmę, której tu brakuje?</h2>
+    <div class="pas-cta__akcja">
+      <a class="cta" href="../zglos-firme/index.html">Zgłoś polską firmę</a>
+      <p class="maly">Nie sprzedajemy miejsc w katalogu. Nie da się do niego wejść inaczej niż przez kryteria. <a href="../dla-firm/index.html">Dla firm</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka__siatka">
+      <div>
+        <h2>Metryczka kampanii</h2>
+        <dl class="wiersze">
+          <div class="wiersz"><dt>Nazwa</dt><dd>Postaw na Polskie</dd></div>
+          <div class="wiersz"><dt>Rodzaj</dt><dd>Kampania społeczna</dd></div>
+          <div class="wiersz"><dt>Organizator</dt><dd>[WYPEŁNIA KLIENT: nazwa, KRS/NIP, adres]</dd></div>
+          <div class="wiersz"><dt>Kontakt</dt><dd>[WYPEŁNIA KLIENT: e-mail]</dd></div>
+        </dl>
+      </div>
+      <nav aria-label="Kampania">
+        <h2>Kampania</h2>
+        <ul>
+          <li><a href="../manifest/index.html">Manifest</a></li>
+          <li><a href="../dlaczego/index.html">Dowody</a></li>
+          <li><a href="../katalog/index.html">Katalog</a></li>
+          <li><a href="../zasady-katalogu/index.html">Zasady katalogu</a></li>
+          <li><a href="../dla-firm/index.html">Dla firm</a></li>
+          <li><a href="../media/index.html">Media</a></li>
+          <li><a href="../kontakt/index.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informacje prawne">
+        <h2>Informacje</h2>
+        <ul>
+          <li><a href="../regulamin/index.html">Regulamin</a></li>
+          <li><a href="../prywatnosc/index.html">Prywatność i cookies</a></li>
+          <li><a href="../dostepnosc/index.html">Dostępność</a></li>
+        </ul>
+        <div class="kod-kreskowy" role="img" aria-label="Ozdobny kod kreskowy"></div>
+      </nav>
+    </div>
+    <p class="stopka__deklaracja">Postaw na Polskie to kampania społeczna. Nie jest związana z żadną partią. Nie przyjmuje opłat za wpisy do katalogu. [WYPEŁNIA KLIENT: potwierdzić]</p>
+    <p class="footer-copy">© <span id="year">2026</span> Copyright by <a href="https://www.pflgroup.pl" target="_blank" rel="noopener">PFL Group</a>. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+</body>
+</html>

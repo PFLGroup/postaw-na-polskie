@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deklaracja dostępności · Postaw na Polskie</title>
+<meta name="description" content="Deklaracja dostępności serwisu postawnapolskie.pl według WCAG 2.2 AA: co zrobiliśmy, znane ograniczenia i jak zgłosić problem.">
+<link rel="canonical" href="https://postawnapolskie.pl/dostepnosc/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Postaw na Polskie">
+<meta property="og:title" content="Deklaracja dostępności">
+<meta property="og:description" content="Deklaracja dostępności serwisu postawnapolskie.pl według WCAG 2.2 AA: co zrobiliśmy, znane ograniczenia i jak zgłosić problem.">
+<meta property="og:url" content="https://postawnapolskie.pl/dostepnosc/">
+<meta property="og:image" content="https://postawnapolskie.pl/assets/img/og.png">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ac0311">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/poltawski-nowy-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/pages/formularze.css">
+<script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+<header class="naglowek">
+  <div class="wrap">
+    <a class="znak" href="../index.html" aria-label="Postaw na Polskie, strona główna"><span class="znak__kod" aria-hidden="true"></span>Postaw na Polskie</a>
+    <div class="naglowek__akcje">
+      <a class="cta" href="../deklaracja/index.html">Podpisz deklarację</a>
+      <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
+<dialog class="menu" id="menu" aria-label="Menu">
+  <div class="menu__in">
+    <button class="menu-btn menu__zamknij" type="button" data-menu-close>Zamknij</button>
+    <nav aria-label="Główna">
+      <ol>
+        <li><a href="../index.html">Start</a></li>
+        <li><a href="../manifest/index.html">Manifest</a></li>
+        <li><a href="../dlaczego/index.html">Dlaczego to działa</a></li>
+        <li><a href="../jak-rozpoznac/index.html">Jak rozpoznać polski produkt</a></li>
+        <li><a href="../katalog/index.html">Polskie marki</a></li>
+        <li><a href="../zglos-firme/index.html">Zgłoś firmę</a></li>
+        <li><a href="../deklaracja/index.html">Podpisz deklarację</a></li>
+        <li><a href="../dla-firm/index.html">Dla firm</a></li>
+        <li><a href="../dolacz/index.html">Ambasadorzy i partnerzy</a></li>
+        <li><a href="../media/index.html">Dla mediów</a></li>
+        <li><a href="../kontakt/index.html">Kontakt</a></li>
+      </ol>
+    </nav>
+  </div>
+</dialog>
+
+<main id="tresc">
+  <!-- Projekt dokumentu do weryfikacji przez prawnika klienta. Treść jest wersją roboczą przygotowaną przez wykonawcę strony, nie poradą prawną. -->
+  <section class="f-hero">
+    <div class="wrap f-hero__siatka">
+      <div class="f-hero__tekst">
+        <h1>Deklaracja dostępności</h1>
+        <p class="lead">Chcemy, żeby z serwisu postawnapolskie.pl mógł skorzystać każdy, także z czytnikiem ekranu, samą klawiaturą albo powiększeniem.</p>
+      </div>
+      <div class="f-hero__bok">
+        <div class="etykieta f-metryczka">
+          <p class="etykieta__tytul">Dostępność</p>
+          <dl class="wiersze">
+          <div class="wiersz"><dt>Dokument</dt><dd>Deklaracja dostępności</dd></div>
+          <div class="wiersz"><dt>Standard</dt><dd>WCAG 2.2, poziom AA</dd></div>
+          <div class="wiersz"><dt>Podstawa oceny</dt><dd>Samoocena wykonawcy serwisu</dd></div>
+          <div class="wiersz"><dt>Status</dt><dd>Projekt przed weryfikacją prawną</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja">
+    <div class="wrap siatka uklad">
+      <div class="uklad__glowny prose prawne">
+
+        <p><!-- WYPEŁNIA KLIENT: pełna nazwa organizatora, adres, KRS/NIP --><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: pełna nazwa organizatora]</span> zobowiązuje się zapewnić dostępność serwisu postawnapolskie.pl zgodnie z wytycznymi WCAG 2.2 na poziomie AA.</p>
+        <dl class="wiersze">
+          <div class="wiersz"><dt>Data publikacji serwisu</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: data]</span></dd></div>
+          <div class="wiersz"><dt>Data ostatniej aktualizacji</dt><dd><time datetime="2026-11-18">18 listopada 2026 r.</time></dd></div>
+          <div class="wiersz"><dt>Standard</dt><dd>WCAG 2.2, poziom AA</dd></div>
+          <div class="wiersz"><dt>Status zgodności</dt><dd>Częściowo zgodny (samoocena, wyjątki niżej)<!-- DO WERYFIKACJI: po audycie wpisać: zgodny / częściowo zgodny / niezgodny --></dd></div>
+        </dl>
+
+        <h2>Co zrobiliśmy</h2>
+        <ul>
+          <li>Link „Przejdź do treści” na początku każdej strony.</li>
+          <li>Jeden nagłówek główny na stronę i logiczna kolejność nagłówków.</li>
+          <li>Kontrast tekstu co najmniej 4,5:1, w większości 7:1, w trybie jasnym i ciemnym. Tryb ciemny włącza się według ustawień systemu.</li>
+          <li>Pełna obsługa klawiaturą i widoczny fokus. Menu otwiera się jako okno dialogowe, zamykane klawiszem Esc.</li>
+          <li>Na podstronach nie ma animacji. Serwis respektuje ustawienie „ogranicz ruch”.</li>
+          <li>Każde pole formularza ma etykietę nad polem. Błędy opisujemy słowami. Nie stosujemy łamigłówek CAPTCHA.</li>
+          <li>Przyciski i linki mają co najmniej 24 na 24 piksele.</li>
+          <li>Treść daje się powiększyć do 200% i czytać na ekranie o szerokości 320 pikseli bez przewijania w poziomie.</li>
+          <li>Język strony jest oznaczony jako polski.</li>
+        </ul>
+
+        <h2>Znane ograniczenia</h2>
+        <ul>
+          <li>Na stronach zablokowano zaznaczanie i kopiowanie tekstu oraz menu kontekstowe (poza polami formularzy). Może to utrudniać pracę osobom, które korzystają z funkcji „zaznacz i przeczytaj” albo tłumaczą tekst.<!-- DO WERYFIKACJI: decyzja organizatora: zostawić czy wyłączyć blokadę --></li>
+          <li>Pliki do pobrania (np. ściągawka PDF) mogą nie być w pełni dostępne.<!-- DO WERYFIKACJI: sprawdzić po dodaniu plików --></li>
+          <li>Zdjęcia produktów dostarczają firmy. Opisy alternatywne uzupełniamy przed publikacją wpisu.</li>
+        </ul>
+
+        <h2>Przygotowanie deklaracji</h2>
+        <p>Deklarację sporządzono <time datetime="2026-11-18">18 listopada 2026 r.</time> na podstawie samooceny wykonawcy serwisu.<!-- DO WERYFIKACJI: audyt: narzędzie axe i test ręczny z czytnikiem NVDA, data i wykonawca --></p>
+        <p>Kampania nie jest podmiotem publicznym, a serwis nie prowadzi sprzedaży. Deklarację publikujemy dobrowolnie, wzorując się na ustawie z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych.<!-- DO WERYFIKACJI: czy do organizatora ma zastosowanie ustawa z dnia 26 kwietnia 2024 r. o zapewnianiu spełniania wymagań dostępności niektórych produktów i usług, Dz.U. 2024 poz. 731 --></p>
+
+        <h2>Skróty klawiszowe</h2>
+        <p>Serwis nie ma własnych skrótów. Działają standardowe skróty przeglądarki: Tab i Shift+Tab, Enter, spacja i Esc.</p>
+
+        <h2>Informacje zwrotne i kontakt</h2>
+        <p>Jeśli coś w serwisie jest dla Ciebie niedostępne, napisz. Możesz poprosić o udostępnienie treści w innej formie, na przykład jako zwykły tekst.</p>
+        <dl class="wiersze">
+          <div class="wiersz"><dt>Osoba kontaktowa</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: imię i nazwisko]</span></dd></div>
+          <div class="wiersz"><dt>E-mail</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: e-mail]</span></dd></div>
+          <div class="wiersz"><dt>Telefon</dt><dd><span class="do-uzupelnienia">[WYPEŁNIA KLIENT: numer albo usunąć wiersz]</span></dd></div>
+        </dl>
+        <p>W zgłoszeniu podaj, o którą stronę chodzi, opisz problem i napisz, jak mamy się z Tobą skontaktować. Odpowiemy najpóźniej w ciągu 7 dni roboczych. Jeśli nie da się tego zrobić w tym terminie, napiszemy, kiedy problem usuniemy.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka__siatka">
+      <div>
+        <h2>Metryczka kampanii</h2>
+        <dl class="wiersze">
+          <div class="wiersz"><dt>Nazwa</dt><dd>Postaw na Polskie</dd></div>
+          <div class="wiersz"><dt>Rodzaj</dt><dd>Kampania społeczna</dd></div>
+          <div class="wiersz"><dt>Organizator</dt><dd>[WYPEŁNIA KLIENT: nazwa, KRS/NIP, adres]</dd></div>
+          <div class="wiersz"><dt>Kontakt</dt><dd>[WYPEŁNIA KLIENT: e-mail]</dd></div>
+        </dl>
+      </div>
+      <nav aria-label="Kampania">
+        <h2>Kampania</h2>
+        <ul>
+          <li><a href="../manifest/index.html">Manifest</a></li>
+          <li><a href="../dlaczego/index.html">Dowody</a></li>
+          <li><a href="../katalog/index.html">Katalog</a></li>
+          <li><a href="../zasady-katalogu/index.html">Zasady katalogu</a></li>
+          <li><a href="../dla-firm/index.html">Dla firm</a></li>
+          <li><a href="../media/index.html">Media</a></li>
+          <li><a href="../kontakt/index.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informacje prawne">
+        <h2>Informacje</h2>
+        <ul>
+          <li><a href="../regulamin/index.html">Regulamin</a></li>
+          <li><a href="../prywatnosc/index.html">Prywatność i cookies</a></li>
+          <li><a href="../dostepnosc/index.html">Dostępność</a></li>
+        </ul>
+        <div class="kod-kreskowy" role="img" aria-label="Ozdobny kod kreskowy"></div>
+      </nav>
+    </div>
+    <p class="stopka__deklaracja">Postaw na Polskie to kampania społeczna. Nie jest związana z żadną partią. Nie przyjmuje opłat za wpisy do katalogu. [WYPEŁNIA KLIENT: potwierdzić]</p>
+    <p class="footer-copy">© <span id="year">2026</span> Copyright by <a href="https://www.pflgroup.pl" target="_blank" rel="noopener">PFL Group</a>. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+</body>
+</html>

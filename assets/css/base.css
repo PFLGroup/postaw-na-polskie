@@ -1,0 +1,198 @@
+/* Postaw na Polskie — system bazowy „Etykieta Pochodzenia”
+   Jeden kolor farby (tusz) na papierze etykiety. Kroje: Poltawski Nowy (display) + Lato (tekst).
+   Plik wspólny: zmienia go tylko prowadzący. Style podstron → assets/css/pages/<strona>.css */
+
+:root {
+  --papier: #fef9f7;
+  --tusz: #ac0311;
+  --tusz-gleboki: #800613;
+  --karton: #e9dfd5;
+  --czern: #2c1a18;
+  --na-tuszu: #fef9f7;
+
+  --f-display: "Poltawski Nowy", "Book Antiqua", Georgia, serif;
+  --f-text: "Lato", "Segoe UI", system-ui, sans-serif;
+
+  --t-xs: 0.8125rem;
+  --t-s: 0.9375rem;
+  --t-m: 1.0625rem;
+  --t-l: clamp(1.25rem, 1.05rem + 0.8vw, 1.6rem);
+  --t-xl: clamp(1.8rem, 1.2rem + 2.6vw, 3.2rem);
+  --t-2xl: clamp(2.6rem, 1.2rem + 6vw, 6.5rem);
+  --t-mega: clamp(3.6rem, 0.8rem + 12.5vw, 15rem);
+
+  --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem; --s-7: 11rem;
+  --linia: 1px solid var(--tusz);
+  --linia-gruba: 6px solid var(--tusz);
+  --ramka: 2px solid var(--tusz);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 3rem);
+  --max: 1440px;
+  --odwr-tlo: #ac0311; --odwr-tekst: #fef9f7;
+  color-scheme: light;
+}
+
+/* Tryb ciemny = odwrócony druk: kremowy tusz na czerwonym papierze (biel + czerwień zostają). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papier: #92040f; --tusz: #fef9f7; --tusz-gleboki: #ffd9d2;
+    --karton: #6e020b; --czern: #fef9f7; --na-tuszu: #92040f;
+    --odwr-tlo: #fef9f7; --odwr-tekst: #92040f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --papier: #92040f; --tusz: #fef9f7; --tusz-gleboki: #ffd9d2;
+  --karton: #6e020b; --czern: #fef9f7; --na-tuszu: #92040f;
+  --odwr-tlo: #fef9f7; --odwr-tekst: #92040f; color-scheme: dark;
+}
+@media (max-width: 760px) { :root { --t-mega: clamp(4.25rem, 21vw, 7rem); } }
+
+/* Sekcja pełnej szerokości w odwróconym druku (papier na tuszu). Komponenty w środku działają bez zmian. */
+.pelny { --papier: var(--odwr-tlo); --tusz: var(--odwr-tekst); --tusz-gleboki: var(--odwr-tekst); --na-tuszu: var(--odwr-tlo);
+  --karton: color-mix(in srgb, var(--odwr-tekst) 14%, var(--odwr-tlo)); --czern: var(--odwr-tekst);
+  --linia: 1px solid var(--odwr-tekst); --linia-gruba: 6px solid var(--odwr-tekst); --ramka: 2px solid var(--odwr-tekst);
+  background: var(--papier); color: var(--tusz); }
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+body {
+  margin: 0; background: var(--papier); color: var(--tusz);
+  font: 400 var(--t-m)/1.6 var(--f-text);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  user-select: none; -webkit-user-select: none;
+}
+input, textarea, select, [contenteditable] { user-select: text; -webkit-user-select: text; }
+::selection { background: transparent; }
+input::selection, textarea::selection { background: var(--tusz); color: var(--na-tuszu); }
+img, svg, canvas { display: block; max-width: 100%; height: auto; }
+img { -webkit-user-drag: none; }
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; line-height: 0.92; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+p, li { text-wrap: pretty; }
+p { margin: 0 0 1em; max-width: 64ch; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 3px; }
+:focus-visible { outline: 3px solid var(--tusz); outline-offset: 3px; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: var(--s-2); top: -4rem; z-index: 100; background: var(--tusz); color: var(--na-tuszu); padding: 0.6rem 1rem; }
+.skip:focus { top: var(--s-2); }
+
+/* ---------- typografia ---------- */
+.mega { font-size: var(--t-mega); line-height: 0.86; letter-spacing: -0.025em; }
+.h-2xl { font-size: var(--t-2xl); }
+.h-xl { font-size: var(--t-xl); line-height: 1; }
+.h-l { font-family: var(--f-display); font-size: var(--t-l); line-height: 1.15; }
+.lead { font-size: var(--t-l); line-height: 1.45; max-width: 46ch; }
+.maly { font-size: var(--t-s); color: var(--tusz-gleboki); }
+.dane { font: 300 var(--t-xs)/1.4 var(--f-text); letter-spacing: 0.06em; text-transform: uppercase; }
+/* Numer pozycji etykiety (system rozdziałów, nie dekoracja) */
+.poz { font: 700 var(--t-xs)/1 var(--f-text); letter-spacing: 0.14em; text-transform: uppercase; display: inline-flex; gap: 0.6em; align-items: center; }
+.poz::before { content: ""; width: 2.2em; border-top: var(--ramka); }
+.prose h2 { font-size: var(--t-xl); margin: var(--s-5) 0 var(--s-2); }
+.prose h3 { font-size: var(--t-l); line-height: 1.1; margin: var(--s-4) 0 var(--s-1); }
+.prose ul, .prose ol { padding-left: 1.2em; max-width: 64ch; }
+.prose li { margin-bottom: 0.4em; }
+.zrodlo { font-size: var(--t-xs); color: var(--tusz-gleboki); }
+.zrodlo a { word-break: break-word; }
+
+/* ---------- układ ---------- */
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.siatka { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+@media (max-width: 760px) { .siatka { grid-template-columns: minmax(0, 1fr); } .siatka > * { grid-column: 1 / -1 !important; } }
+
+/* ---------- etykieta: główny komponent kampanii ---------- */
+.etykieta { border: var(--ramka); background: var(--papier); padding: var(--s-2) var(--s-3); }
+.etykieta__tytul { font-family: var(--f-display); font-size: var(--t-xl); line-height: 0.95; padding-bottom: var(--s-1); border-bottom: var(--linia-gruba); }
+.wiersze { list-style: none; margin: 0; padding: 0; }
+.wiersz { display: grid; grid-template-columns: minmax(7.5rem, 38%) 1fr; gap: var(--s-2); padding: 0.55rem 0; border-bottom: var(--linia); align-items: baseline; }
+.wiersz:last-child { border-bottom: var(--linia-gruba); }
+.wiersz dt, .wiersz__k { font-weight: 700; font-size: var(--t-s); }
+.wiersz dd, .wiersz__v { margin: 0; font-size: var(--t-s); }
+.wiersz--mocny .wiersz__v { font-family: var(--f-display); font-size: var(--t-l); line-height: 1.1; }
+
+/* tabela „wartości” z kolumną źródła */
+.tabela { width: 100%; border-collapse: collapse; font-size: var(--t-s); }
+.tabela caption { text-align: left; font-family: var(--f-display); font-size: var(--t-l); padding-bottom: var(--s-1); border-bottom: var(--linia-gruba); }
+.tabela th, .tabela td { text-align: left; padding: 0.6rem 0.75rem 0.6rem 0; border-bottom: var(--linia); vertical-align: top; }
+.tabela thead th { font-size: var(--t-xs); text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 3px solid var(--tusz); }
+.tabela td.liczba { font-family: var(--f-display); font-size: var(--t-l); white-space: nowrap; }
+/* .tabela--stos: na wąskim ekranie wiersz tabeli → blok z etykietami pól z data-k (bez poziomego scrolla) */
+.tabela--stos tbody th[scope="row"] { font-weight: 700; }
+@media (max-width: 760px) {
+  .tabela--stos thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .tabela--stos, .tabela--stos tbody, .tabela--stos tr, .tabela--stos td, .tabela--stos tbody th { display: block; width: 100%; }
+  .tabela--stos caption { display: block; }
+  .tabela--stos tr { border-bottom: 3px solid var(--tusz); padding: var(--s-1) 0 var(--s-2); }
+  .tabela--stos td, .tabela--stos tbody th { border-bottom: 0; padding: 0.3rem 0; }
+  .tabela--stos td[data-k]::before { content: attr(data-k); display: block; font: 700 var(--t-xs)/1.3 var(--f-text); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.15rem; }
+  .tabela--stos td.liczba { white-space: normal; }
+}
+
+/* ---------- przyciski: ostre krawędzie, jeden kolor ---------- */
+.cta { display: inline-flex; align-items: center; gap: 0.7em; min-height: 3.25rem; padding: 0.8rem 1.4rem;
+  background: var(--tusz); color: var(--na-tuszu); border: var(--ramka); border-radius: 0;
+  font: 700 var(--t-m)/1.1 var(--f-text); text-decoration: none; cursor: pointer; transition: background .15s, color .15s; }
+.cta::after { content: "→"; font-weight: 400; transition: transform .15s; }
+.cta:hover { background: var(--papier); color: var(--tusz); text-decoration: none; }
+.cta:hover::after { transform: translateX(4px); }
+.cta--obrys { background: transparent; color: var(--tusz); }
+.cta--obrys:hover { background: var(--tusz); color: var(--na-tuszu); }
+.link-dalej { font-weight: 700; text-decoration: underline; }
+.link-dalej::after { content: " →"; }
+
+/* ---------- formularze ---------- */
+.pole { display: grid; gap: 0.35rem; margin-bottom: var(--s-3); }
+.pole label, .pole legend { font-weight: 700; font-size: var(--t-s); }
+.pole .pomoc { font-size: var(--t-xs); color: var(--tusz-gleboki); }
+input[type=text], input[type=email], input[type=tel], input[type=url], input[type=number], select, textarea {
+  width: 100%; font: inherit; color: var(--czern); background: var(--karton); border: 0; border-bottom: 2px solid var(--tusz);
+  border-radius: 0; padding: 0.75rem 0.8rem; min-height: 3rem; }
+textarea { min-height: 8rem; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--tusz); outline-offset: 0; }
+.zgoda { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0.7rem; align-items: start; font-size: var(--t-s); margin-bottom: var(--s-2); }
+.zgoda input { width: 1.25rem; height: 1.25rem; accent-color: var(--tusz); margin-top: 0.15rem; }
+.blad { color: var(--tusz-gleboki); font-weight: 700; font-size: var(--t-s); }
+fieldset { border: 0; padding: 0; margin: 0; }
+
+/* placeholder treści do dostarczenia */
+.do-uzupelnienia { border: 2px dashed var(--tusz); background: var(--karton); color: var(--tusz-gleboki); padding: var(--s-2); font-size: var(--t-s); }
+span.do-uzupelnienia { display: inline; padding: 0 0.3em; border-width: 1px; line-height: inherit; font-size: 0.92em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* ---------- nagłówek ---------- */
+.naglowek { position: sticky; top: 0; z-index: 40; background: var(--papier); border-bottom: var(--linia); }
+.naglowek .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s-2); min-height: 4rem; }
+.znak { font-family: var(--f-display); font-weight: 700; font-size: 1.35rem; line-height: 1; text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.znak__kod { display: inline-block; width: 1.6rem; height: 1.15rem; background: repeating-linear-gradient(90deg, var(--tusz) 0 2px, transparent 2px 3px, var(--tusz) 3px 4px, transparent 4px 6px, var(--tusz) 6px 9px, transparent 9px 10px); }
+.naglowek__akcje { display: flex; gap: var(--s-2); align-items: center; }
+.naglowek .cta { min-height: 2.75rem; padding: 0.55rem 1rem; font-size: var(--t-s); }
+.menu-btn { background: none; border: var(--ramka); color: var(--tusz); font: 700 var(--t-s) var(--f-text); min-height: 2.75rem; padding: 0 1rem; cursor: pointer; }
+@media (max-width: 560px) { .naglowek .cta { display: none; } }
+
+.menu { border: 0; padding: 0; margin: 0 0 0 auto; width: min(32rem, 100%); max-width: 100%; height: 100%; max-height: 100%; background: var(--papier); color: var(--tusz); border-left: var(--linia-gruba); }
+.menu::backdrop { background: rgb(44 26 24 / 0.45); }
+.menu__in { padding: var(--s-3) var(--s-3) var(--s-5); }
+.menu__zamknij { float: right; }
+.menu ol { list-style: none; padding: 0; margin: var(--s-4) 0 0; counter-reset: m; clear: both; }
+.menu li { counter-increment: m; border-bottom: var(--linia); }
+.menu li a { display: grid; grid-template-columns: 2.5rem 1fr; padding: 0.8rem 0; text-decoration: none; font-family: var(--f-display); font-size: 1.6rem; line-height: 1.1; }
+.menu li a::before { content: counter(m, decimal-leading-zero); font: 700 var(--t-xs) var(--f-text); padding-top: 0.5rem; }
+.menu li a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 3px; }
+
+/* ---------- stopka: metryczka kampanii ---------- */
+.stopka { margin-top: var(--s-6); border-top: var(--linia-gruba); padding: var(--s-4) 0 var(--s-3); font-size: var(--t-s); }
+.stopka__siatka { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--s-4); }
+@media (max-width: 860px) { .stopka__siatka { grid-template-columns: 1fr; } }
+.stopka h2 { font-size: var(--t-l); margin-bottom: var(--s-2); }
+.stopka ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: var(--s-3); }
+.stopka li { margin-bottom: 0.45rem; break-inside: avoid; }
+.stopka__deklaracja { border-top: var(--linia); margin-top: var(--s-4); padding-top: var(--s-2); }
+.footer-copy { margin: var(--s-2) 0 0; font-size: var(--t-xs); color: var(--tusz-gleboki); max-width: none; }
+.kod-kreskowy { height: 2.2rem; width: 9rem; background: repeating-linear-gradient(90deg, var(--czern) 0 2px, transparent 2px 4px, var(--czern) 4px 5px, transparent 5px 8px, var(--czern) 8px 11px, transparent 11px 12px, var(--czern) 12px 13px, transparent 13px 16px); }
+
+/* ---------- nagłówek podstrony ---------- */
+.otwarcie { padding: var(--s-5) 0 var(--s-4); border-bottom: var(--linia-gruba); }
+.otwarcie .poz { margin-bottom: var(--s-3); }
+.otwarcie h1 { font-size: var(--t-2xl); max-width: 16ch; }
+.otwarcie .lead { margin-top: var(--s-3); }
+.sekcja { padding: var(--s-5) 0; }
+.sekcja + .sekcja { border-top: var(--linia); }
